@@ -1,6 +1,16 @@
+// router components
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import components
+import HomePage from "../pages/HomePage";
+
 const App = () => {
 	return (
-		<div>This is app component</div>
+		// setting up router
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<HomePage />}/>
+			</Routes>
+		</BrowserRouter>
 	)
 }
 
