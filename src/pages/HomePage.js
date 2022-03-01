@@ -8,9 +8,11 @@ const HomePage = () => {
     return (
         <>
 		<Header/>
-        <Hero/>
-        <PropertyTypeLists/>
-        <BestSellerLists />
+        <div id="main">
+            <Hero/>
+            <PropertyTypeLists/>
+            <BestSellerLists />
+        </div>
         <Footer/>
 		</>
     )
