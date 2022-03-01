@@ -1,6 +1,18 @@
+import Header from '../components/Header';
+import Hero from '../components/Hero';
+import PropertyTypeLists from '../components/PropertyTypeLists';
+import BestSellerLists from '../components/BestSellerLists';
+import Footer from '../components/Footer';
+
 const HomePage = () => {
     return (
-        <div>this is a HomePage</div>
+        <>
+		<Header/>
+        <Hero/>
+        <PropertyTypeLists/>
+        <BestSellerLists />
+        <Footer/>
+		</>
     )
 }
 
