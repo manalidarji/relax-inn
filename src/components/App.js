@@ -7,6 +7,9 @@ import HomePage from "../pages/HomePage";
 import PropListingsPage from '../pages/PropListingsPage';
 import PropDescPage from '../pages/PropDescPage';
 
+// at the end of development replace all API base URL with following:
+// https://relax-inn-api.herokuapp.com/
+
 const App = () => {
 	return (
 		// setting up router
