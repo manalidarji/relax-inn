@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import PropListingsPage from '../pages/PropListingsPage';
 import PropDescPage from '../pages/PropDescPage';
+import PropTypePage from '../pages/PropTypePage';
 
 // at the end of development replace all API base URL with following:
 // https://relax-inn-api.herokuapp.com/
@@ -18,6 +19,7 @@ const App = () => {
 				<Route path="/" element={<HomePage />}/>
 				<Route path="properties" element={<PropListingsPage />}/>
 				<Route path='properties/:id' element={<PropDescPage/>} />
+				<Route path='propertyTypes/:type' element={<PropTypePage />}/>
 			</Routes>
 		</BrowserRouter>
 	)
