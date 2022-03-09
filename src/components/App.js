@@ -1,5 +1,4 @@
 // css
-import 'bootstrap/dist/css/bootstrap.css';
 import '../assets/css/App.css';
 // router components
 import { BrowserRouter, Routes, Route } from "react-router-dom";

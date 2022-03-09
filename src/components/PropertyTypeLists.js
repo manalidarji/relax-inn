@@ -6,7 +6,7 @@ const PropertyTypeLists = () => {
 
     useEffect(() => {
         const MaxNoOfPropTypes = 4;
-        const propTypesApiURL = `http://localhost:8999/propertyTypes?_limit=${MaxNoOfPropTypes}`;
+        const propTypesApiURL = `http://localhost:1000/propertyTypes?_limit=${MaxNoOfPropTypes}`;
 
         fetch(propTypesApiURL)
         .then(resp => resp.json())
@@ -14,19 +14,21 @@ const PropertyTypeLists = () => {
         .catch(error => console.log(error));
     }, []);
     return(
-        <div className='container divider'>
-			<h5 className="section-title">Browse by Property Types</h5>
+        <div className="prop-type-main-wrap divider">
+            <div className='container'>
+                <h5 className="section-title">Browse by Property Types</h5>
 
-            <div className="prop-types-wrap">
-                {propTypes.map(propType => (
-                    <PropertyTypeItem                         
-                        key={propType.id} 
-                        id={propType.id} 
-                        propType={propType}
-                    />
-                ))}
+                <div className="prop-types-wrap">
+                    {propTypes.map(propType => (
+                        <PropertyTypeItem                         
+                            key={propType.id} 
+                            id={propType.id} 
+                            propType={propType}
+                        />
+                    ))}
+                </div>
+
             </div>
-
         </div>
     )
 }
