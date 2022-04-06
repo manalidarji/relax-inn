@@ -11,7 +11,7 @@ const PropTypePage = () => {
   
 	useEffect(() => {
     let filteredProps = [];
-        const allPropsApiURL = `http://localhost:8999/properties`;
+        const allPropsApiURL = `https://relax-inn-api.herokuapp.com/properties`;
 
         fetch(allPropsApiURL)
         .then(resp => resp.json())

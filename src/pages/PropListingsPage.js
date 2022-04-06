@@ -10,7 +10,7 @@ const PropListingsPage = () => {
 
 	// get all properties
 	useEffect( () => {
-		const allPropertiesApiURL = `http://localhost:8999/properties`;
+		const allPropertiesApiURL = `https://relax-inn-api.herokuapp.com/properties`;
 		fetch(allPropertiesApiURL)
 		.then( resp => resp.json())
 		.then( data => setProperties(data))

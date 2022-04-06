@@ -22,7 +22,7 @@ const PropDescPage = () => {
 	);
 	
 	useEffect(() => {
-		const propApiURL = `http://localhost:8999/properties/${id}`;
+		const propApiURL = `https://relax-inn-api.herokuapp.com/properties/${id}`;
 		fetch(propApiURL)
 		.then(resp => resp.json())
 		.then(data => setSingleProp(data))
