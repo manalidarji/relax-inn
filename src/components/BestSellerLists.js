@@ -7,22 +7,13 @@ const BestSellerLists = (props) => {
     
 	// get all properties
 	useEffect( () => {
-        let bestSellers = [];
+        // let bestSellers = [];
         let maxNoOfBestSellerProps = 4;
-		const allPropertiesApiURL = `https://relax-inn-api.herokuapp.com/properties`;
-		fetch(allPropertiesApiURL)
+		const bestsellerPropsApiURL = `${process.env.REACT_APP_API_URI}/properties/bestseller?limit=${maxNoOfBestSellerProps}`;
+
+		fetch(bestsellerPropsApiURL)
 		.then( resp => resp.json())
-		.then( allProps => {
-            
-            bestSellers = allProps.filter( singleProp => {
-                if( singleProp.bestSeller && maxNoOfBestSellerProps > 0){
-                    maxNoOfBestSellerProps--;
-                    return singleProp;
-                }
-				return false;
-            } );
-            setBestSellerProps(bestSellers);
-        })
+		.then( data => setBestSellerProps(data))
 		.catch( error => console.log(error));
 	}, []);
 
