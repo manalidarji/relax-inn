@@ -89,7 +89,7 @@ const Header = () => {
 			<div className="container">
 				<div className="header-wrap">
 					<h1 className="logo">
-						<Link to='/'>Rest-Inn</Link>
+						<Link to='/'>Relax-Inn</Link>
 					</h1>
 
 					<div id="search-bar-wrap" className="mob-hide">
