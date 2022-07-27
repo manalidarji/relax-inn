@@ -3,36 +3,41 @@ import image1 from '../assets/images/1.jpg';
 import image2 from '../assets/images/2.jpg';
 import image3 from '../assets/images/3.jpg';
 import '../assets/css/Hero.css';
+import { Link } from 'react-router-dom';
 
 
 const Hero = () => {
+    const carouselItems = [
+        {
+            img: image1,
+            title: 'Find that perfect resort to relax',
+            link: 'propertyTypes/resorts'
+        },
+        {
+            img: image2,
+            title: 'Find that perfect apartment for you',
+            link: 'propertyTypes/apartments'
+        },
+        {
+            img: image3,
+            title: 'Find homes for your next trip',
+            link: 'propertyTypes/bed and breakfasts'
+        }
+    ];
+
     return(
         <div className="container divider">
             <Carousel fade='true'>
-                <Carousel.Item>
-                    <img className="img-resp" src={image1} alt="Resort" />
-                    <Carousel.Caption>
-                        <h3>Find that perfect resort to relax<span>.</span></h3>
-                        <a href='propertyTypes/resorts' className='primary-btn'>Explore</a>
-                    </Carousel.Caption>
-                </Carousel.Item>
-
-                <Carousel.Item>
-                    <img className="img-resp" src={image2} alt="Resort" />
-                    <Carousel.Caption>
-                        <h3>Find that perfect apartment for you<span>.</span></h3>
-                        <a href='propertyTypes/apartments' className='primary-btn'>Explore</a>
-                    </Carousel.Caption>
-                </Carousel.Item>
-
-                <Carousel.Item>
-                    <img className="img-resp" src={image3} alt="Resort" />
-                    <Carousel.Caption>
-                        <h3>Find homes for your next trip<span>.</span></h3>
-                        <a href='propertyTypes/bed and breakfasts' className='primary-btn'>Explore</a>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                </Carousel>
+                {carouselItems.map( (item, i) => (
+                    <Carousel.Item key={i}>
+                        <img className="img-resp" src={item.img} alt="Resort" />
+                        <Carousel.Caption>
+                            <h3>{item.title}<span>.</span></h3>
+                            <Link to={item.link} className='primary-btn'>Explore</Link>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                ))}
+            </Carousel>
         </div>
     )
 }
